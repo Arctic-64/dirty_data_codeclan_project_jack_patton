@@ -47,6 +47,6 @@ merged_data = rbind(candy_2015, candy_2016, candy_2017)
 
 #merged_data = mutate(merged_data, age = ifelse(age == "[0-9]+", age, NA))
 
-merged_data
+tail(merged_data$age, 1000)
 
 write.csv(merged_data, here("clean_data/candy_data_clean.csv"))
