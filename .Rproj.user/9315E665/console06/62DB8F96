@@ -1,0 +1,18 @@
+[0m[0KWindows PowerShell[0K[?25l
+Copyright (C) Microsoft Corporation. All rights reserved.[0K
+[0K
+Try the new cross-platform PowerShell https://aka.ms/pscore6[0K
+[0K
+[0K[?25hPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton>[0K[68G[?25lPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton> [0;33;93mc[0m[0K[?25h[?25lPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton[0;31;91m> [0;33;93mcombined_data[0m <[0;37;90m-[0m select([0;33;93mcombined_data[0;37;90m,[0m [0;36m"common_name"[0;37;90m,[0m [0;36m"count"[0;37;90m,[0m [0;36m"nacc"[0;37;90m,[0m [0;36m"ocacc"[0;37;90m,[0m [0;36m"long"[0;37;90m,[0m [0;36m"lat"[0m)[0K
+[0K[?25h[0;31;91mAt line:1 char:15[0m[0K[?25l
+[0;31;91m+ combined_data <- select(combined_data, "common_name", "count", "nacc" ...[0m[0K
+[0;31;91m+               ~[0m[0K
+[0;31;91mThe '<' operator is reserved for future use.[0m[0K
+[0;31;91mAt line:1 char:38[0m[0K
+[0;31;91m+ combined_data <- select(combined_data, "common_name", "count", "nacc" ...[0m[0K
+[0;31;91m+                                      ~[0m[0K
+[0;31;91mMissing argument in parameter list.[0m[0K
+[0;31;91m    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException[0m[0K
+[0;31;91m    + FullyQualifiedErrorId : RedirectionNotSupported[0m[0K
+[0;31;91m [0m[0K
+[0K[?25hPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton>[0K[68G
