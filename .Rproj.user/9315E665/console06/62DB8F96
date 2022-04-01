@@ -15,4 +15,25 @@ Try the new cross-platform PowerShell https://aka.ms/pscore6[0K
 [0;31;91m    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException[0m[0K
 [0;31;91m    + FullyQualifiedErrorId : RedirectionNotSupported[0m[0K
 [0;31;91m [0m[0K
-[0K[?25hPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton>[0K[68G
+[0K[?25hPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton>[0K[68G[?25lPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton> [0;33;93mm[0m[0K[?25h[?25lPS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton[0;31;91m> [0;33;93mmerged_data[0;32;92m$country[0;33;93m = sub("[Uu][:print:]?[Ss][:print:]?[:print:]?[Aa]?[:print:]?" , "USA" , merged_data$country[0K)
+[0m[0K
+[0K[?25h[0;31;91mAt line:1 char:92[0m[0K[?25l
+[0;31;91m+ ... ][:print:]?[Ss][:print:]?[:print:]?[Aa]?[:print:]?" , "USA" , merged_ ...[0m[0K
+[0;31;91m+                                                                  ~[0m[0K
+[0;31;91mMissing expression after ','.[0m[0K
+[0;31;91mAt line:1 char:93[0m[0K
+[0;31;91m+ ... s][:print:]?[:print:]?[Aa]?[:print:]?" , "USA" , merged_data$country)[0m[0K
+[0;31;91m+                                                      ~~~~~~~~~~~~~~~~~~~[0m[0K
+[0;31;91mUnexpected token 'merged_data$country' in expression or statement.[0m[0K
+[0;31;91mAt line:1 char:92[0m[0K
+[0;31;91m+ ... ][:print:]?[Ss][:print:]?[:print:]?[Aa]?[:print:]?" , "USA" , merged_ ...[0m[0K
+[0;31;91m+                                                                  ~[0m[0K
+[0;31;91mMissing closing ')' in expression.[0m[0K
+[0;31;91mAt line:1 char:112[0m[0K
+[0;31;91m+ ... s][:print:]?[:print:]?[Aa]?[:print:]?" , "USA" , merged_data$country)[0m[0K
+[0;31;91m+                                                                         ~[0m[0K
+[0;31;91mUnexpected token ')' in expression or statement.[0m[0K[?25h[?25l
+[0;31;91m    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException[0m[0K
+[0;31;91m    + FullyQualifiedErrorId : MissingExpressionAfterToken[0m[0K
+[0;31;91m [0m[0K
+PS D:\UNIVERSITY\CodeClan\dirty_data_codeclan_project_jack_patton>[0K[68G[?25h

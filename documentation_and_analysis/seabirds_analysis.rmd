@@ -11,6 +11,8 @@ seabirds
 
 ```
 
+all following questions assume that each birds common name refers only to one species of bird.
+
 the Wandering albatross sensu lato is the bird that had the most individual sightings with 11293 sightings across the dataset
 
 ```{r}
@@ -36,18 +38,14 @@ seabirds %>%
   arrange(desc(total_count))
 ```
 How many different types of birds were only ever seen in groups of 1?
-Atlantic yellow-nosed mollymawk
-Caspian tern
-Chatham Island mollymawk	
-Dark Procellaria (unidentified)		
-Stejneger's petrel		
-Yellow-eyed penguin
-were all seen exclusivly without a group
+the following birds were all seen exclusivly without a group 
 ```{r}
 seabirds %>% group_by(common_name) %>%
-tally(ocacc == "N") %>%
+tally(ocacc == "Y" | ocacc == "U") %>%
 rename(times_seen_in_group = n) %>%
-arrange(times_seen_in_group)
+arrange(times_seen_in_group) %>%
+filter(times_seen_in_group == 0) %>%
+select(common_name)
 ```
 How many penguins were seen?:
 penguins were seen on 70 different occasions

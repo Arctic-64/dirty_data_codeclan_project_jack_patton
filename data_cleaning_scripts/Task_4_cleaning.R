@@ -44,9 +44,46 @@ candy_2016 = select(candy_2016, wanted_cols)
 candy_2017 = select(candy_2017, wanted_cols)
 merged_data = rbind(candy_2015, candy_2016, candy_2017)
 
+merged_data$age = str_replace_all(merged_data$age, "[A-Z a-z /s _ !]*", "")
+merged_data$age = as.numeric(merged_data$age)
+merged_data = mutate(merged_data, age = ifelse(age < 100 & age > 5, age, NA))
 
-#merged_data = mutate(merged_data, age = ifelse(age == "[0-9]+", age, NA))
 
-tail(merged_data$age, 1000)
+# US, Canada, UK, and all other countries
+length(unique(merged_data$country))
+merged_data$country[grep("[Uu][:print::space::punct:]*[Ss][:print::space::punct:]*[Aa]*[:print::punct:Aa]*", merged_data$country)] = "US"
+merged_data$country[grep("[Uu].[Ss].[Aa].", merged_data$country)] = "US"
+merged_data$country[grep("[Uu].[Ss].", merged_data$country)] = "US"
+merged_data$country[grep("[uU] [sS] [aA]", merged_data$country)] = "US"
+merged_data$country[grep("[uU] [sS]", merged_data$country)] = "US"
+merged_data$country[grep("(?i)[Mm][eu]rica", merged_data$country)] = "US"
+merged_data$country[grep("(?i)united states", merged_data$country)] = "US"
+merged_data$country[grep("(?i)unit*ed* s[:print:]*", merged_data$country)] = "US"
+merged_data$country[grep("(?i)merca", merged_data$country)] = "US"
+merged_data$country[grep("(?i)murrika", merged_data$country)] = "US"
+merged_data$country[grep("(?i)unhinged", merged_data$country)] = "US"
+merged_data$country[grep("(?i)trump", merged_data$country)] = "US"
+merged_data$country[grep("(?i)ayyy", merged_data$country)] = "US"
+
+merged_data$country[grep("(?i)uk", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)u.k.", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)united king?dom", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)england", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)scotland", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)wales", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)god's country", merged_data$country)] = "UK"
+merged_data$country[grep("(?i)endland", merged_data$country)] = "UK"
+
+merged_data$country[grep("(?i)Canada", merged_data$country)] = "Canada"
+
+for(i in 1:nrow(merged_data)){
+  if(!merged_data$country[i] %in% c("US","UK","Canada", NA)){
+    merged_data$country[i] = "Other"
+  }
+}
+
+#possible future work, use a library of states to increase accuracy of country recognition or fill in NA values.
+
+table(merged_data$country) ## to see if it looks right
 
 write.csv(merged_data, here("clean_data/candy_data_clean.csv"))
